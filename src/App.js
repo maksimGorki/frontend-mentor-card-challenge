@@ -20,8 +20,8 @@ function App() {
   return (
     <div className="wrapper">
       <div className="cardContainer">
-        {cars.map((car, index) => {
-          return <Card key={index} carName={car.carName} />;
+        {cars.map((car) => {
+          return <Card key={car.carId} carName={car.carName} />;
         })}
       </div>
     </div>

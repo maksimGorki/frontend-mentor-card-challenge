@@ -7,21 +7,21 @@ const cardProps = {
   sedans: {
     cardStyle: "card1",
     btnStyle: "sedanBtn",
-    carLogo: <Sedans />,
+    carLogo: Sedans,
     carDescription:
       "Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip.",
   },
   suvs: {
     cardStyle: "card2",
     btnStyle: "suvBtn",
-    carLogo: <Suvs />,
+    carLogo: Suvs,
     carDescription:
       "Take a SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures.",
   },
   luxury: {
     cardStyle: "card3",
     btnStyle: "luxuryBtn",
-    carLogo: <Luxury />,
+    carLogo: Luxury,
     carDescription:
       "Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style.",
   },
@@ -29,11 +29,11 @@ const cardProps = {
 
 const Card = ({ carName }) => {
   const cardExtraProps = cardProps[carName];
-
+  const LogoComp = cardExtraProps.carLogo;
   return (
     <div className={`card ${cardExtraProps.cardStyle}`}>
       <div className="infoContainer">
-        {cardExtraProps.carLogo}
+        <LogoComp />
         <div className="carTypeHeader">{carName}</div>
         <div className="carTypeDetails">{cardExtraProps.carDescription}</div>
       </div>
