@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "BigShouldersDisplay";
+  src: local("BigShouldersDisplay"),
+    url(./fonts/BigShouldersDisplay-Bold.ttf) format("truetype");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "LexendDeca";
+  src: local("LexendDeca"),
+    url(./fonts/LexendDeca-Regular.ttf) format("truetype");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+  max-width: auto;
+  min-height: 100vh;
+  margin: auto;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+  min-height: 24rem;
+  margin: auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 423px) {
+  .cardContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media only screen and (min-width: 1200px) {
+  .cardContainer {
+    width: 50%;
+  }
+}
+
+.card {
+  position: relative;
+}
+
+.card1 {
+  background-color: hsl(31, 77%, 52%);
+}
+
+.card2 {
+  background-color: hsl(184, 100%, 22%);
+}
+
+.card3 {
+  background-color: hsl(179, 100%, 13%);
+}
+
+.infoContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: start;
+  align-items: flex-start;
+  margin: 3rem;
+  width: auto;
+  height: auto;
 }
 
-.App-link {
-  color: #61dafb;
+@media only screen and (min-width: 1200px) {
+  .infoContainer {
+    margin: 2rem;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 660px) {
+  .infoContainer {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 400px) {
+  .infoContainer {
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
+}
+
+.carTypeHeader {
+  font-family: BigShouldersDisplay;
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 95%);
+  margin-top: 1.5rem;
+}
+
+.carTypeDetails {
+  font-family: LexendDeca;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.3rem;
+  color: hsla(0, 0%, 100%, 0.75);
+  margin-top: 1.5rem;
+  min-height: 150px;
+}
+
+.learnMoreBtn {
+  font-family: LexendDeca;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 0.6rem;
+  background-color: hsl(0, 0%, 95%);
+  border-style: solid;
+  border-color: hsl(0, 0%, 95%);
+  border-width: 1px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  position: absolute;
+  bottom: 20px;
+  left: 3rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .learnMoreBtn {
+    left: 2rem;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .learnMoreBtn {
+    left: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .learnMoreBtn {
+    left: 3rem;
+  }
+}
+
+.sedanBtn {
+  color: hsl(31, 77%, 52%);
+}
+
+.suvBtn {
+  color: hsl(184, 100%, 22%);
+}
+
+.luxuryBtn {
+  color: hsl(179, 100%, 13%);
+}
+
+.learnMoreBtn:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: hsl(0, 0%, 95%);
+  transition: 0.5s all linear;
 }
